@@ -9,6 +9,7 @@ import {
 import { PreloadAllModules, RouterModule } from '@angular/router';
 import { ORIGIN_URL } from '@nguniversal/aspnetcore-engine/tokens';
 import { TransferHttpCacheModule } from '@nguniversal/common';
+import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule, MatCardModule } from '@angular/material';
 // i18n support
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -55,7 +56,11 @@ export function createTranslateLoader(http: HttpClient, baseHref) {
     FormsModule,
     ReactiveFormsModule,
     AccordionModule.forRoot(), // You could also split this up if you don't want the Entire Module imported
-
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatIconModule,
+    MatCardModule,
     // i18n support
     TranslateModule.forRoot({
       loader: {
