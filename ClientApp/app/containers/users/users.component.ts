@@ -32,21 +32,33 @@ export class UsersComponent implements OnInit {
   // users: IUser[];
   users;
   selectedUser: IUser;
+  errorMessage: string;
 
   // Use "constructor"s only for dependency injection
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService) { }
 
   // Here you want to handle anything with @Input()'s @Output()'s
   // Data retrieval / etc - this is when the Component is "ready" and wired up
-  ngOnInit() {
-    // this.userService.getUsers().subscribe(result => {
-    //   console.log('HttpClient [GET] /api/users/allresult', result);
-    //   this.users = result;
-    // });
-    this.userService.users.map(result => {
-      this.users = result;
-      console.log(this.users);
-    })
+  // ngOnInit() {
+  //   this.userService.getUsers().subscribe(result => {
+  //     console.log('HttpClient [GET] /api/users/allresult', result);
+  //     this.users = result;
+  //   });
+  // }
+
+  // ngOnInit(): void {
+  //   this.userService.getUsers().subscribe(
+  //     users => {
+  //       this.users = users;
+  //       console.log(this.users);
+  //     },
+  //     error => this.errorMessage = <any>error
+  //   );
+  // }
+
+  ngOnInit(): void {
+    this.users = this.userService.getUsers();
+    console.log(this.users);
   }
 
   onSelect(user: IUser): void {

@@ -1,70 +1,74 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, Injector } from '@angular/core';
 import { ORIGIN_URL } from '@nguniversal/aspnetcore-engine/tokens';
 import { IUser } from '../models/User';
 
+import { Observable, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+
 @Injectable()
 export class UserService {
   private baseUrl: string;
-  users = [
-    {
-      "id": 14,
-      "name": "test",
-      "entryTime": "2019-04-23T16:02:03.3619922"
-    },
-    {
-      "id": 10,
-      "name": "asd",
-      "entryTime": "2019-04-23T10:19:51.6086314"
-    },
-    {
-      "id": 13,
-      "name": "asdfasdfasd",
-      "entryTime": "2019-04-23T10:19:45.4226921"
-    },
-    {
-      "id": 12,
-      "name": "GRIMMR3AP3R",
-      "entryTime": "2019-04-22T14:25:59.132788"
-    },
-    {
-      "id": 11,
-      "name": "Gaulomatic",
-      "entryTime": "2019-04-22T14:25:59.1327877"
-    },
-    {
-      "id": 8,
-      "name": "paonath",
-      "entryTime": "2019-04-22T14:25:59.1327869"
-    },
-    {
-      "id": 7,
-      "name": "daveo1001",
-      "entryTime": "2019-04-22T14:25:59.1327867"
-    },
-    {
-      "id": 6,
-      "name": "markwhitfeld",
-      "entryTime": "2019-04-22T14:25:59.1327864"
-    },
-    {
-      "id": 5,
-      "name": "Ketrex",
-      "entryTime": "2019-04-22T14:25:59.1327861"
-    },
-    {
-      "id": 4,
-      "name": "LiverpoolOwen",
-      "entryTime": "2019-04-22T14:25:59.1327859"
-    }
-  ]
+  // private usersUrl = 'api/users/users.json';
 
   constructor(private http: HttpClient, private injector: Injector) {
     this.baseUrl = this.injector.get(ORIGIN_URL);
   }
 
-  getUsers() {
-    // return this.http.get<IUser[]>(`${this.baseUrl}/api/users`);
+  // getProducts(): Observable<IUser[]> {
+  //   return this.http.get<IUser[]>(this.productUrl).pipe(
+  //     tap(data => console.log('All: ' + JSON.stringify(data))),
+  //     catchError(this.handleError)
+  //   );
+  // }
+
+  // getUsers() {
+  //   return this.http.get<IUser[]>(`${this.baseUrl}/api/users`);
+  // }
+
+  getUsers(): IUser[] {
+    return [
+      {
+        'id': 14,
+        'name': 'test'
+      },
+      {
+        'id': 10,
+        'name': 'asd'
+      },
+      {
+        'id': 13,
+        'name': 'asdfasdfasd'
+      },
+      {
+        'id': 12,
+        'name': 'GRIMMR3AP3R'
+      },
+      {
+        'id': 11,
+        'name': 'Gaulomatic'
+      },
+      {
+        'id': 8,
+        'name': 'paonath'
+      },
+      {
+        'id': 7,
+        'name': 'daveo1001'
+      },
+      {
+        'id': 6,
+        'name': 'markwhitfeld'
+      },
+      {
+        'id': 5,
+        'name': 'Ketrex'
+      },
+      {
+        'id': 4,
+        'name': 'LiverpoolOwen'
+      }
+    ];
   }
 
   getUser(user: IUser) {

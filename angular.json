@@ -17,7 +17,10 @@
             "main": "ClientApp/boot-browser.ts",
             "polyfills": "ClientApp/polyfills/polyfills.ts",
             "tsConfig": "ClientApp/tsconfig.app.json",
-            "assets": [],
+            "assets": [
+              "ClientApp/assets",
+              "ClientApp/api"
+            ],
             "styles": [],
             "scripts": []
           },
@@ -67,7 +70,7 @@
             "karmaConfig": "ClientApp/karma.conf.js",
             "styles": ["ClientApp/styles.css"],
             "scripts": [],
-            "assets": ["ClientApp/favicon.ico", "ClientApp/assets"]
+            "assets": ["ClientApp/favicon.ico", "ClientApp/assets", "ClientApp/api"]
           }
         },
         "lint": {
