@@ -1,0 +1,9 @@
+# pack-refs with: peeled fully-peeled sorted 
+ada2a7a112acade0e8b8149b9197dbc486c61ea5 refs/remotes/origin/angular-5.0-WIP
+ee3ae58a88907d8c9e62125b193271c4dc4e89dc refs/remotes/origin/app-insights-ssr-bug
+e4bebd84112305d73dea9100635747e29d426742 refs/remotes/origin/howto/auth
+44800405a6086872f9561a047bdf074a98735b9e refs/remotes/origin/howto/preboot
+9b42c48447394d1caa780ba79744f58072566a71 refs/remotes/origin/howto/signalr
+55f0105f807946cff515aaa0ef535de1329c2b9f refs/remotes/origin/master
+a4d7e31c393d2fda89b35e227c8ff3bee7465f9a refs/remotes/origin/old-2.x-universal-branch
+2ee1469db9317a58158be04556d93d4053018d84 refs/remotes/origin/revert-to-angular-4
